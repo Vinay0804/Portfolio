@@ -122,6 +122,7 @@
     .about-para{
         font-size: 18px;
         line-height: 32px;
+        width: 80%;
     }
     .about-skill{
         gap:20px;
