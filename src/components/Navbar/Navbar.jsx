@@ -7,6 +7,7 @@ import menu_close from '../../assets/menu_close.svg';
 
 const Navbar = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
+  const [activeMenuItem, setActiveMenuItem] = useState("home"); // State to track active menu item
   const menuref = useRef();
 
   const openMenu = () => {
@@ -17,37 +18,46 @@ const Navbar = () => {
     setIsMenuOpen(false);
   };
 
-  return (<div className="navbar">
-      <img className="nameimage" src="https://render.fineartamerica.com/images/rendered/default/greeting-card/images/artworkimages/medium/3/1-vinay-tintodesigns-transparent.png?&targetx=0&targety=-98&imagewidth=700&imageheight=700&modelwidth=700&modelheight=500&backgroundcolor=ffffff&orientation=0" alt="profile pic"/>
-      <img  src={menu_open}  onClick={openMenu} alt="open menu" className="nav-mob-open"/>
+  const handleMenuItemClick = (item) => {
+    setActiveMenuItem(item); // Set the clicked item as active
+    setIsMenuOpen(false); // Close the menu if needed
+  };
+
+  return (
+    <div className="navbar">
+      <img className="nameimage" src="https://render.fineartamerica.com/images/rendered/default/greeting-card/images/artworkimages/medium/3/1-vinay-tintodesigns-transparent.png?&targetx=0&targety=-98&imagewidth=700&imageheight=700&modelwidth=700&modelheight=500&backgroundcolor=ffffff&orientation=0" alt="profile pic" />
+      <img src={menu_open} onClick={openMenu} alt="open menu" className="nav-mob-open" />
       <ul ref={menuref} className="nav-menu" style={{ right: isMenuOpen ? '0' : '-350px' }}>
         <img src={menu_close} onClick={closeMenu} alt="close menu" className="nav-mob-close" />
-        <li><AnchorLink className="anchor-link" href="#home"><p onClick={() => setIsMenuOpen(false)}>Home</p></AnchorLink>
-          {isMenuOpen && <img src={underline} alt="underline" />}
+        <li>
+          <AnchorLink className="anchor-link" href="#home">
+            <p onClick={() => handleMenuItemClick("home")}>Home</p>
+          </AnchorLink>
+          {activeMenuItem === "home" && <img src={underline} alt="underline" />}
         </li>
         <li>
           <AnchorLink className="anchor-link" offset={50} href="#about">
-            <p onClick={() => setIsMenuOpen(false)}>About Me</p>
+            <p onClick={() => handleMenuItemClick("about")}>About Me</p>
           </AnchorLink>
-          {isMenuOpen && <img src={underline} alt="underline" />}
+          {activeMenuItem === "about" && <img src={underline} alt="underline" />}
         </li>
         <li>
           <AnchorLink className="anchor-link" offset={50} href="#Services">
-            <p onClick={() => setIsMenuOpen(false)}>Services</p>
+            <p onClick={() => handleMenuItemClick("services")}>Services</p>
           </AnchorLink>
-          {isMenuOpen && <img src={underline} alt="underline" />}
+          {activeMenuItem === "services" && <img src={underline} alt="underline" />}
         </li>
         <li>
           <AnchorLink className="anchor-link" offset={50} href="#work">
-            <p onClick={() => setIsMenuOpen(false)}>Portfolio</p>
+            <p onClick={() => handleMenuItemClick("portfolio")}>Portfolio</p>
           </AnchorLink>
-          {isMenuOpen && <img src={underline} alt="underline" />}
+          {activeMenuItem === "portfolio" && <img src={underline} alt="underline" />}
         </li>
         <li>
           <AnchorLink className="anchor-link" offset={50} href="#contact">
-            <p onClick={() => setIsMenuOpen(false)}>Contact</p>
+            <p onClick={() => handleMenuItemClick("contact")}>Contact</p>
           </AnchorLink>
-          {isMenuOpen && <img src={underline} alt="underline" />}
+          {activeMenuItem === "contact" && <img src={underline} alt="underline" />}
         </li>
       </ul>
       <div className="nav-connect">
@@ -60,3 +70,4 @@ const Navbar = () => {
 };
 
 export default Navbar;
+
