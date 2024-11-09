@@ -7,7 +7,7 @@ const Footer = () => {
     <div className='footer'>
         <div className="footer-top-left">
             <h1>VINAY</h1>
-            <p>I am a Frontend Developer from India In which I have deep knowledge in react js,node js</p>
+            <p>Always learning and evolving to create user-friendly, scalable solutions.</p>
         </div>
            <hr />
         <div className="footer-bottom">
