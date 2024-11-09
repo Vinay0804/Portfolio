@@ -17,11 +17,15 @@ const Navbar = () => {
   const closeMenu=()=>{
     menuref.current.style.right="-350px"
   }
-
+  if(openMenu){
+      return closeMenu
+  }
 
   return <div className="navbar">
+    
 
     <img  className="nameimage" src="https://render.fineartamerica.com/images/rendered/default/greeting-card/images/artworkimages/medium/3/1-vinay-tintodesigns-transparent.png?&targetx=0&targety=-98&imagewidth=700&imageheight=700&modelwidth=700&modelheight=500&backgroundcolor=ffffff&orientation=0" alt="profile pic"/>
+    <img src={menu_open} onClick={openMenu} alt="" className="nav-mob-open"/>
     
     <ul ref = {menuref} className="nav-menu">
       <img src={menu_close} onClick={closeMenu} alt="" className="nav-mob-close" />
@@ -31,7 +35,6 @@ const Navbar = () => {
         <li><AnchorLink className="anchor-link" offset={50} href="#work"><p onClick={()=>Setmenu("work")}>Portfolio</p></AnchorLink>{menu==="work"?<img src={underline} alt=""/>:<></>}</li>
         <li><AnchorLink className="anchor-link" offset={50} href="#contact"><p onClick={()=>Setmenu("contact")}>Contact</p></AnchorLink>{menu==="contact"?<img src={underline} alt=""/>:<></>}</li>
     </ul>
-    <img src={menu_open} onClick={openMenu} alt="" className="nav-mob-open"/>
     <div className="nav-connect"><AnchorLink className="anchor-link" offset={50} href="#contact">Connect With Me</AnchorLink></div>
     </div>;
 };
