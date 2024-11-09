@@ -60,7 +60,7 @@
         display:none
     }
     .nav-mob-open{
-        display: none;
+       
         display: block;
         position: fixed;
         right: 30px;
@@ -92,5 +92,8 @@
         padding-left: 100px;
         flex-direction: row;
         gap:20px
+    }
+    .navbar ul{
+        display: none;
     }
 }
