@@ -66,6 +66,7 @@
     }
     .nav-mob-close{
         display: block;
+        display:none;
         position: relative;
         top:30px;
         left:290px;
