@@ -60,13 +60,14 @@
         display:none
     }
     .nav-mob-open{
+        display: none;
         display: block;
         position: fixed;
         right: 30px;
     }
     .nav-mob-close{
         display: block;
-        display:none;
+    
         position: relative;
         top:30px;
         left:290px;
