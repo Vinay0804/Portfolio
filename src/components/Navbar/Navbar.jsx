@@ -17,8 +17,8 @@ const Navbar = () => {
   const closeMenu=()=>{
     menuref.current.style.right="-350px"
   }
-  if(openMenu){
-      return closeMenu
+  if(closeMenu){
+      return openMenu
   }
 
   return <div className="navbar">
