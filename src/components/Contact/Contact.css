@@ -147,6 +147,7 @@
     }
     .contact-right textarea{
         width:95%;
+        margin-right: 5px;
         font-size: 20px;
     }
     .contact-submit{
