@@ -1,4 +1,4 @@
-import React, { useRef, useState } from "react";
+import React, { useRef, useState, useEffect } from "react";
 import "./Navbar.css";
 import underline from '../../assets/nav_underline.svg'
 import AnchorLink from "react-anchor-link-smooth-scroll";
@@ -11,6 +11,13 @@ const Navbar = () => {
   const [menu,Setmenu] = useState("home")
 
   const menuref = useRef();
+  useEffect(() => {
+
+    if (menuref.current) {
+      menuref.current.style.right = "-350px";
+    }
+  }, []);
+
   const openMenu=()=>{
     menuref.current.style.right="0"
   }
