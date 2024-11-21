@@ -29,41 +29,20 @@ const Navbar = () => {
       <img src={menu_open} onClick={openMenu} alt="open menu" className="nav-mob-open" />
       <ul ref={menuref} className="nav-menu" style={{ right: isMenuOpen ? '0' : '-350px' }}>
         <img src={menu_close} onClick={closeMenu} alt="close menu" className="nav-mob-close" />
-        <li>
-          <AnchorLink className="anchor-link" href="#home">
-            <p onClick={() => handleMenuItemClick("home")}>Home</p>
-          </AnchorLink>
+        <li><AnchorLink className="anchor-link" href="#home"><p onClick={() => handleMenuItemClick("home")}>Home</p></AnchorLink>
           {activeMenuItem === "home" && <img src={underline} alt="underline" />}
         </li>
-        <li>
-          <AnchorLink className="anchor-link" offset={50} href="#about">
-            <p onClick={() => handleMenuItemClick("about")}>About Me</p>
-          </AnchorLink>
+        <li><AnchorLink className="anchor-link" offset={50} href="#about"><p onClick={() => handleMenuItemClick("about")}>About Me</p></AnchorLink>
           {activeMenuItem === "about" && <img src={underline} alt="underline" />}
         </li>
-        <li>
-          <AnchorLink className="anchor-link" offset={50} href="#Services">
-            <p onClick={() => handleMenuItemClick("services")}>Services</p>
-          </AnchorLink>
-          {activeMenuItem === "services" && <img src={underline} alt="underline" />}
-        </li>
-        <li>
-          <AnchorLink className="anchor-link" offset={50} href="#work">
-            <p onClick={() => handleMenuItemClick("portfolio")}>Portfolio</p>
-          </AnchorLink>
+       <li><AnchorLink className="anchor-link" offset={50} href="#work"> <p onClick={() => handleMenuItemClick("portfolio")}>Portfolio</p></AnchorLink>
           {activeMenuItem === "portfolio" && <img src={underline} alt="underline" />}
         </li>
-        <li>
-          <AnchorLink className="anchor-link" offset={50} href="#contact">
-            <p onClick={() => handleMenuItemClick("contact")}>Contact</p>
-          </AnchorLink>
+        <li><AnchorLink className="anchor-link" offset={50} href="#contact"><p onClick={() => handleMenuItemClick("contact")}>Contact</p></AnchorLink>
           {activeMenuItem === "contact" && <img src={underline} alt="underline" />}
         </li>
       </ul>
-      <div className="nav-connect">
-        <AnchorLink className="anchor-link" offset={50} href="#contact">
-          Connect With Me
-        </AnchorLink>
+      <div className="nav-connect"><AnchorLink className="anchor-link" offset={50} href="#contact">Connect With Me</AnchorLink>
       </div>
     </div>
   );
